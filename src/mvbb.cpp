@@ -45,13 +45,13 @@ MVBB::MVBB(const std::string name_space)
     nh_->param<std::string>("reference_frame", frame_, "/world");
     sub_ = nh_->subscribe(nh_->resolveName(topic_), 1, &MVBB::cbCloud, this);
     sub_req = nh_->subscribe("ask_for_boxes", 1, &MVBB::subCallback, this);
-    pub_res = nh_->advertise<std_msgs::Float64MultiArray>("segmented_boxes", 1);
     std::vector<double> trasl, rot;
     nh_->param<std::vector<double> >("translation", trasl, {0, 0, 0});
     nh_->param<std::vector<double> >("rotation", rot, {0, 0, 0, 1});
     delta_trans_.setOrigin(tf::Vector3(trasl[0], trasl[1], trasl[2]));
     delta_trans_.setRotation(tf::Quaternion(rot[0], rot[1], rot[2], rot[3]));
-    visual_tools_.reset(new rviz_visual_tools::RvizVisualTools("/world","/rviz_visual_markers"));
+    visual_tools_.reset(new rviz_visual_tools::RvizVisualTools("world", "/rviz_visual_markers"));
+    // visual_tools_->enableBatchPublishing();
 }
 
 void MVBB::subCallback(const std_msgs::Float64::ConstPtr &msg)
@@ -64,21 +64,21 @@ void MVBB::subCallback(const std_msgs::Float64::ConstPtr &msg)
     {
         return;
     }
-    pub_res.publish(fruits);
-    ROS_WARN_STREAM("[MVBB::%s]\tAsked for fruits!. Showing "<< info_boxes.size() << " Boxes");
-    std::sort(info_boxes.begin(), info_boxes.end(), [](std::pair<Eigen::Affine3d, std::vector<double>> first, std::pair<Eigen::Affine3d, std::vector<double>> second) {
+    std::vector<std::pair<Eigen::Affine3d, std::vector<double>>> info_boxes_local = info_boxes;
+    std::sort(info_boxes_local.begin(), info_boxes_local.end(), [](std::pair<Eigen::Affine3d, std::vector<double>> first, std::pair<Eigen::Affine3d, std::vector<double>> second) {
         double i = first.second[2];
         double j = second.second[2];
         return (i < j);
     });
     int i = 0;
-    for(auto& b:info_boxes)
+    for (auto& b : info_boxes_local)
     {
         std::vector<double> hwl = b.second;
-        visual_tools_->publishWireframeCuboid(b.first, hwl[0], hwl[1], hwl[2], rviz_visual_tools::BLUE, std::string("Box_" + std::to_string(i)), i);
+        visual_tools_->publishWireframeCuboid(b.first, hwl[0], hwl[1], hwl[2], rviz_visual_tools::BLUE, std::string("Box_") + std::to_string(i), i);
         i++;
     }
-
+    visual_tools_->triggerBatchPublish();
+    ROS_WARN_STREAM("Showing " << i << " Boxes");
     ros::spinOnce();
 }
 
@@ -132,10 +132,9 @@ bool MVBB::cbSlice()
     ROS_INFO_STREAM("[MVBB::" << __func__ << "]\tFound " << clusters->size() << " Boxes!, from a PointCloud of " << cloud_->points.size() << " points");;
     transf_.clear();
     names_.clear();
-    fruits.data.clear();
     info_boxes.clear();
     int i(0);
-    
+
     for (const auto &cl : *clusters)
     {
 
@@ -180,27 +179,18 @@ bool MVBB::cbSlice()
 
         tf::Transform t(tf::Quaternion(bboxQuaternion.x(), bboxQuaternion.y(), bboxQuaternion.z(), bboxQuaternion.w()), tf::Vector3(bboxTransform[0], bboxTransform[1], bboxTransform[2]));
         transf_.push_back(t);
-        std_msgs::Float64 x_f, y_f, z_f;
-        x_f.data = bboxTransform[0];
-        y_f.data = bboxTransform[1];
-        z_f.data = bboxTransform[2];
-        // res.x.push_back(x_f);
-        // res.y.push_back(y_f);
-        // res.z.push_back(z_f);
-        fruits.data.push_back(bboxTransform[0]);
-        fruits.data.push_back(bboxTransform[1]);
-        fruits.data.push_back(bboxTransform[2]);
+
         Eigen::Quaterniond q_box(bboxQuaternion.w(), bboxQuaternion.x(), bboxQuaternion.y(), bboxQuaternion.z());
         Eigen::Translation3d t_box(bboxTransform[0], bboxTransform[1], bboxTransform[2]);
-        Eigen::Affine3d pose_box = Eigen::Affine3d::Identity()*t_box*q_box;
-        double h = maxPoint.x- minPoint.x;
-        double w = maxPoint.y- minPoint.y;
-        double l = maxPoint.z- minPoint.z;;
-        info_boxes.push_back(std::make_pair(pose_box, std::vector<double>{h,w,l}));
+        Eigen::Affine3d pose_box = Eigen::Affine3d::Identity() * t_box * q_box;
+        double h = maxPoint.x - minPoint.x;
+        double w = maxPoint.y - minPoint.y;
+        double l = maxPoint.z - minPoint.z;;
+        info_boxes.push_back(std::make_pair(pose_box, std::vector<double> {h, w, l}));
         ++i;
 
     }
-        
+
     return true;
 }
 

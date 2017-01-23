@@ -102,7 +102,6 @@ namespace mvbb
         double clus_tol_;
         int min_size_, max_size_;
         bool invert_;
-        std_msgs::Float64MultiArray  fruits;
         rviz_visual_tools::RvizVisualToolsPtr visual_tools_;
     };
 }

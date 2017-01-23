@@ -384,10 +384,6 @@ Visualization Manager:
         All Enabled: false
         Box_0:
           Value: true
-        Box_1:
-          Value: true
-        Box_2:
-          Value: true
         camera_depth_frame:
           Value: true
         camera_depth_optical_frame:
@@ -575,10 +571,6 @@ Visualization Manager:
               world:
                 Box_0:
                   {}
-                Box_1:
-                  {}
-                Box_2:
-                  {}
                 vito_anchor:
                   left_arm_base_link:
                     left_arm_1_link:
@@ -747,15 +739,13 @@ Visualization Manager:
       Marker Topic: /rviz_visual_markers
       Name: MarkerArray
       Namespaces:
-        Box_0: true
-        Box_1: true
-        Box_2: true
+        {}
       Queue Size: 100
       Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
-    Fixed Frame: vito_anchor
+    Fixed Frame: world
     Frame Rate: 30
   Name: root
   Tools:
