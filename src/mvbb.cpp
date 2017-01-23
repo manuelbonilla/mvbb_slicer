@@ -51,7 +51,6 @@ MVBB::MVBB(const std::string name_space)
     delta_trans_.setOrigin(tf::Vector3(trasl[0], trasl[1], trasl[2]));
     delta_trans_.setRotation(tf::Quaternion(rot[0], rot[1], rot[2], rot[3]));
     visual_tools_.reset(new rviz_visual_tools::RvizVisualTools("world", "/rviz_visual_markers"));
-    // visual_tools_->enableBatchPublishing();
 }
 
 void MVBB::subCallback(const std_msgs::Float64::ConstPtr &msg)
@@ -59,7 +58,7 @@ void MVBB::subCallback(const std_msgs::Float64::ConstPtr &msg)
 
     nh_->param<int>("cluster_min_size", min_size_, 1000);
     nh_->param<int>("cluster_max_size", max_size_, 10000);
-    //ROS_INFO_STREAM("cluster_max_size: " << max_size_);
+    visual_tools_->deleteAllMarkers();
     if (msg->data == 0.0)
     {
         return;
@@ -78,7 +77,7 @@ void MVBB::subCallback(const std_msgs::Float64::ConstPtr &msg)
         i++;
     }
     visual_tools_->triggerBatchPublish();
-    ROS_WARN_STREAM("Showing " << i << " Boxes");
+    ROS_INFO_STREAM("Publishing " << i << " Boxes");
     ros::spinOnce();
 }
 
@@ -129,7 +128,7 @@ bool MVBB::cbSlice()
     ece.setMinClusterSize(min_size_);
     ece.setMaxClusterSize(max_size_);
     ece.extract(*clusters);
-    ROS_INFO_STREAM("[MVBB::" << __func__ << "]\tFound " << clusters->size() << " Boxes!, from a PointCloud of " << cloud_->points.size() << " points");;
+    ROS_DEBUG_STREAM("[MVBB::" << __func__ << "]\tFound " << clusters->size() << " Boxes!, from a PointCloud of " << cloud_->points.size() << " points");;
     transf_.clear();
     names_.clear();
     info_boxes.clear();
