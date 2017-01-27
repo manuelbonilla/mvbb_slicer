@@ -62,6 +62,7 @@
 #include <utility>
 #include <pcl_ros/transforms.h>
 #include <tf_conversions/tf_eigen.h>
+#include <std_srvs/Empty.h>
 
 // typedef std::pair<Eigen::Affine3d, std::vector<double>> single_box_info;
 
@@ -85,6 +86,7 @@ namespace mvbb
         ///Callback to get input point cloud
         void cbCloud(const sensor_msgs::PointCloud2::ConstPtr &msg);
         void subCallback(const std_msgs::Float64::ConstPtr &msg);
+        bool callbackLoadCalibration(std_srvs::Empty::Request& request, std_srvs::Empty::Response& response);
         bool cbSlice();
         void show_results();
         void load_calibration();
@@ -93,7 +95,7 @@ namespace mvbb
         ros::ServiceServer srv_slice_;
         ros::Publisher pub_res;
         ros::Subscriber sub_req;
-        ros::ServiceServer srv_calib_;
+        ros::ServiceServer load_calibration_service;
         tf::TransformBroadcaster brcaster_;
         tf::TransformListener listener_;
         tf::StampedTransform T_c_w_;

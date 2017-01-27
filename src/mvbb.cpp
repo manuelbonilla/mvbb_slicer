@@ -45,8 +45,15 @@ MVBB::MVBB(const std::string name_space)
     nh_->param<std::string>("reference_frame", frame_, "/world");
     sub_ = nh_->subscribe(nh_->resolveName(topic_), 1, &MVBB::cbCloud, this);
     sub_req = nh_->subscribe("ask_for_boxes", 1, &MVBB::subCallback, this);
+    load_calibration_service = nh_->advertiseService("load_calibration", &MVBB::callbackLoadCalibration, this);
     visual_tools_.reset(new rviz_visual_tools::RvizVisualTools("world", "/rviz_visual_markers"));
     load_calibration();
+}
+
+bool MVBB::callbackLoadCalibration(std_srvs::Empty::Request& request, std_srvs::Empty::Response& response)
+{
+    load_calibration();
+    return true;
 }
 
 void MVBB::show_results()
