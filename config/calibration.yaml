@@ -1,6 +1,19 @@
 # Results are written in the form that they can be directly sent to a static_transform_publisher node
 # Recall its usage use static_transform_publisher x y z qx qy qz qw frame_id child_frame_id  period(milliseconds)
-translation: [-0.0466307, -0.320035, 0.328402]
-rotation: [-0.324219, 0.0267321, 0.0108062, 0.945542]
+# translation: [-0.0466307, -0.320035, 0.328402]
+# rotation: [-0.324219, 0.0267321, 0.0108062, 0.945542]
+# frame_id: camera_rgb_optical_frame
+# child_frame_id: world
+
+# This file contains the values obtained by the calibration package
+# Results are written in the form that they can be directly sent to a static_transform_publisher node
+# Recall its usage use static_transform_publisher x y z qx qy qz qw frame_id child_frame_id  period(milliseconds)
+# translation: [-0.0583281, 0.771345, 0.339713]
+# rotation: [0.619214, 0.644138, -0.245391, 0.37609]
+# frame_id: camera_rgb_optical_frame
+# child_frame_id: vito_anchor
+translation: [0.0130069, 0.558353, -0.00511085]
+rotation: [0.574299, 0.577712, -0.398852, 0.421125]
 frame_id: camera_rgb_optical_frame
 child_frame_id: world
+
