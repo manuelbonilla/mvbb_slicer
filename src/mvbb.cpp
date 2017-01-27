@@ -45,24 +45,12 @@ MVBB::MVBB(const std::string name_space)
     nh_->param<std::string>("reference_frame", frame_, "/world");
     sub_ = nh_->subscribe(nh_->resolveName(topic_), 1, &MVBB::cbCloud, this);
     sub_req = nh_->subscribe("ask_for_boxes", 1, &MVBB::subCallback, this);
-    std::vector<double> trasl, rot;
-    nh_->param<std::vector<double> >("translation", trasl, {0, 0, 0});
-    nh_->param<std::vector<double> >("rotation", rot, {0, 0, 0, 1});
-    delta_trans_.setOrigin(tf::Vector3(trasl[0], trasl[1], trasl[2]));
-    delta_trans_.setRotation(tf::Quaternion(rot[0], rot[1], rot[2], rot[3]));
     visual_tools_.reset(new rviz_visual_tools::RvizVisualTools("world", "/rviz_visual_markers"));
+    load_calibration();
 }
 
-void MVBB::subCallback(const std_msgs::Float64::ConstPtr &msg)
+void MVBB::show_results()
 {
-
-    nh_->param<int>("cluster_min_size", min_size_, 1000);
-    nh_->param<int>("cluster_max_size", max_size_, 10000);
-    visual_tools_->deleteAllMarkers();
-    if (msg->data == 0.0)
-    {
-        return;
-    }
     std::vector<std::pair<Eigen::Affine3d, std::vector<double>>> info_boxes_local = info_boxes;
     std::sort(info_boxes_local.begin(), info_boxes_local.end(), [](std::pair<Eigen::Affine3d, std::vector<double>> first, std::pair<Eigen::Affine3d, std::vector<double>> second) {
         double i = first.second[2];
@@ -77,7 +65,21 @@ void MVBB::subCallback(const std_msgs::Float64::ConstPtr &msg)
         i++;
     }
     visual_tools_->triggerBatchPublish();
-    ROS_INFO_STREAM("Publishing " << i << " Boxes");
+    ROS_DEBUG_STREAM("Publishing " << i << " Boxes");
+    ros::spinOnce();
+}
+
+void MVBB::subCallback(const std_msgs::Float64::ConstPtr &msg)
+{
+
+    nh_->param<int>("cluster_min_size", min_size_, 1000);
+    nh_->param<int>("cluster_max_size", max_size_, 10000);
+    // visual_tools_->deleteAllMarkers();
+    if (msg->data == 0.0)
+    {
+        return;
+    }
+    show_results();
     ros::spinOnce();
 }
 
@@ -103,14 +105,11 @@ void MVBB::cbCloud(const sensor_msgs::PointCloud2::ConstPtr &msg)
 {
     cloud_ = boost::make_shared<pcl::PointCloud<pcl::PointXYZRGB>>();
     pcl::fromROSMsg (*msg, *cloud_);
+    if ( broadcast_results_)
+    {
+        show_results();
+    }
 
-    cloud_ = boost::make_shared<pcl::PointCloud<pcl::PointXYZRGB>>();
-    sensor_msgs::PointCloud msg_conv, msg1;
-    sensor_msgs::PointCloud2 msg2;
-    sensor_msgs::convertPointCloud2ToPointCloud(*msg, msg1);
-    listener_.transformPointCloud(frame_, msg1, msg_conv);
-    sensor_msgs::convertPointCloudToPointCloud2(msg_conv, msg2);
-    pcl::fromROSMsg (msg2, *cloud_);
 }
 
 bool MVBB::cbSlice()
@@ -177,11 +176,11 @@ bool MVBB::cbSlice()
         //fill in transforms
 
         tf::Transform t(tf::Quaternion(bboxQuaternion.x(), bboxQuaternion.y(), bboxQuaternion.z(), bboxQuaternion.w()), tf::Vector3(bboxTransform[0], bboxTransform[1], bboxTransform[2]));
-        transf_.push_back(t);
+        transf_.push_back(delta_trans_.inverse()*t);
 
         Eigen::Quaterniond q_box(bboxQuaternion.w(), bboxQuaternion.x(), bboxQuaternion.y(), bboxQuaternion.z());
         Eigen::Translation3d t_box(bboxTransform[0], bboxTransform[1], bboxTransform[2]);
-        Eigen::Affine3d pose_box = Eigen::Affine3d::Identity() * t_box * q_box;
+        Eigen::Affine3d pose_box = Eigen::Affine3d::Identity() * transform_c_w * t_box * q_box;
         double h = maxPoint.x - minPoint.x;
         double w = maxPoint.y - minPoint.y;
         double l = maxPoint.z - minPoint.z;;
@@ -191,6 +190,16 @@ bool MVBB::cbSlice()
     }
 
     return true;
+}
+
+void MVBB::load_calibration()
+{
+    std::vector<double> trasl, rot;
+    nh_->param<std::vector<double> >("translation", trasl, {0, 0, 0});
+    nh_->param<std::vector<double> >("rotation", rot, {0, 0, 0, 1});
+    delta_trans_.setOrigin(tf::Vector3(trasl[0], trasl[1], trasl[2]));
+    delta_trans_.setRotation(tf::Quaternion(rot[0], rot[1], rot[2], rot[3]));
+    tf::transformTFToEigen(delta_trans_.inverse(), transform_c_w);
 }
 
 } //End namespace

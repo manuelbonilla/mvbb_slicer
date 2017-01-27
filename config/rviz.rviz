@@ -7,7 +7,7 @@ Panels:
         - /Global Options1
         - /Status1
         - /TF1/Frames1
-        - /PointCloud21
+        - /MarkerArray2
       Splitter Ratio: 0.5
     Tree Height: 606
   - Class: rviz/Selection
@@ -184,6 +184,185 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
+        left_hand_clamp:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        left_hand_index_distal_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        left_hand_index_fake_link1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        left_hand_index_fake_link2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        left_hand_index_fake_link3:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        left_hand_index_knuckle_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        left_hand_index_middle_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        left_hand_index_proximal_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        left_hand_invisible_wire_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        left_hand_kuka_coupler:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        left_hand_kuka_coupler_bottom:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        left_hand_little_distal_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        left_hand_little_fake_link1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        left_hand_little_fake_link2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        left_hand_little_fake_link3:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        left_hand_little_knuckle_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        left_hand_little_middle_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        left_hand_little_proximal_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        left_hand_middle_distal_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        left_hand_middle_fake_link1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        left_hand_middle_fake_link2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        left_hand_middle_fake_link3:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        left_hand_middle_knuckle_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        left_hand_middle_middle_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        left_hand_middle_proximal_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        left_hand_palm_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        left_hand_ring_distal_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        left_hand_ring_fake_link1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        left_hand_ring_fake_link2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        left_hand_ring_fake_link3:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        left_hand_ring_knuckle_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        left_hand_ring_middle_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        left_hand_ring_proximal_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        left_hand_softhand_base:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        left_hand_thumb_distal_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        left_hand_thumb_fake_link1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        left_hand_thumb_fake_link3:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        left_hand_thumb_knuckle_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        left_hand_thumb_proximal_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
         right_arm_1_link:
           Alpha: 1
           Show Axes: false
@@ -304,6 +483,185 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
         right_arm_base_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_hand_clamp:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_hand_index_distal_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_hand_index_fake_link1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        right_hand_index_fake_link2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        right_hand_index_fake_link3:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        right_hand_index_knuckle_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_hand_index_middle_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_hand_index_proximal_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_hand_invisible_wire_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        right_hand_kuka_coupler:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        right_hand_kuka_coupler_bottom:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_hand_little_distal_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_hand_little_fake_link1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        right_hand_little_fake_link2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        right_hand_little_fake_link3:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        right_hand_little_knuckle_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_hand_little_middle_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_hand_little_proximal_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_hand_middle_distal_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_hand_middle_fake_link1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        right_hand_middle_fake_link2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        right_hand_middle_fake_link3:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        right_hand_middle_knuckle_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_hand_middle_middle_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_hand_middle_proximal_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_hand_palm_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_hand_ring_distal_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_hand_ring_fake_link1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        right_hand_ring_fake_link2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        right_hand_ring_fake_link3:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        right_hand_ring_knuckle_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_hand_ring_middle_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_hand_ring_proximal_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_hand_softhand_base:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_hand_thumb_distal_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_hand_thumb_fake_link1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        right_hand_thumb_fake_link3:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        right_hand_thumb_knuckle_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_hand_thumb_proximal_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -382,8 +740,6 @@ Visualization Manager:
       Frame Timeout: 15
       Frames:
         All Enabled: false
-        Box_0:
-          Value: true
         camera_depth_frame:
           Value: true
         camera_depth_optical_frame:
@@ -452,6 +808,84 @@ Visualization Manager:
           Value: true
         left_arm_base_link:
           Value: true
+        left_hand_clamp:
+          Value: true
+        left_hand_index_distal_link:
+          Value: true
+        left_hand_index_fake_link1:
+          Value: true
+        left_hand_index_fake_link2:
+          Value: true
+        left_hand_index_fake_link3:
+          Value: true
+        left_hand_index_knuckle_link:
+          Value: true
+        left_hand_index_middle_link:
+          Value: true
+        left_hand_index_proximal_link:
+          Value: true
+        left_hand_invisible_wire_link:
+          Value: true
+        left_hand_kuka_coupler:
+          Value: true
+        left_hand_kuka_coupler_bottom:
+          Value: true
+        left_hand_little_distal_link:
+          Value: true
+        left_hand_little_fake_link1:
+          Value: true
+        left_hand_little_fake_link2:
+          Value: true
+        left_hand_little_fake_link3:
+          Value: true
+        left_hand_little_knuckle_link:
+          Value: true
+        left_hand_little_middle_link:
+          Value: true
+        left_hand_little_proximal_link:
+          Value: true
+        left_hand_middle_distal_link:
+          Value: true
+        left_hand_middle_fake_link1:
+          Value: true
+        left_hand_middle_fake_link2:
+          Value: true
+        left_hand_middle_fake_link3:
+          Value: true
+        left_hand_middle_knuckle_link:
+          Value: true
+        left_hand_middle_middle_link:
+          Value: true
+        left_hand_middle_proximal_link:
+          Value: true
+        left_hand_palm_link:
+          Value: true
+        left_hand_ring_distal_link:
+          Value: true
+        left_hand_ring_fake_link1:
+          Value: true
+        left_hand_ring_fake_link2:
+          Value: true
+        left_hand_ring_fake_link3:
+          Value: true
+        left_hand_ring_knuckle_link:
+          Value: true
+        left_hand_ring_middle_link:
+          Value: true
+        left_hand_ring_proximal_link:
+          Value: true
+        left_hand_softhand_base:
+          Value: true
+        left_hand_thumb_distal_link:
+          Value: true
+        left_hand_thumb_fake_link1:
+          Value: true
+        left_hand_thumb_fake_link3:
+          Value: true
+        left_hand_thumb_knuckle_link:
+          Value: true
+        left_hand_thumb_proximal_link:
+          Value: true
         right_arm_1_link:
           Value: true
         right_arm_1_link_dummy:
@@ -510,6 +944,84 @@ Visualization Manager:
           Value: true
         right_arm_base_link:
           Value: true
+        right_hand_clamp:
+          Value: true
+        right_hand_index_distal_link:
+          Value: true
+        right_hand_index_fake_link1:
+          Value: true
+        right_hand_index_fake_link2:
+          Value: true
+        right_hand_index_fake_link3:
+          Value: true
+        right_hand_index_knuckle_link:
+          Value: true
+        right_hand_index_middle_link:
+          Value: true
+        right_hand_index_proximal_link:
+          Value: true
+        right_hand_invisible_wire_link:
+          Value: true
+        right_hand_kuka_coupler:
+          Value: true
+        right_hand_kuka_coupler_bottom:
+          Value: true
+        right_hand_little_distal_link:
+          Value: true
+        right_hand_little_fake_link1:
+          Value: true
+        right_hand_little_fake_link2:
+          Value: true
+        right_hand_little_fake_link3:
+          Value: true
+        right_hand_little_knuckle_link:
+          Value: true
+        right_hand_little_middle_link:
+          Value: true
+        right_hand_little_proximal_link:
+          Value: true
+        right_hand_middle_distal_link:
+          Value: true
+        right_hand_middle_fake_link1:
+          Value: true
+        right_hand_middle_fake_link2:
+          Value: true
+        right_hand_middle_fake_link3:
+          Value: true
+        right_hand_middle_knuckle_link:
+          Value: true
+        right_hand_middle_middle_link:
+          Value: true
+        right_hand_middle_proximal_link:
+          Value: true
+        right_hand_palm_link:
+          Value: true
+        right_hand_ring_distal_link:
+          Value: true
+        right_hand_ring_fake_link1:
+          Value: true
+        right_hand_ring_fake_link2:
+          Value: true
+        right_hand_ring_fake_link3:
+          Value: true
+        right_hand_ring_knuckle_link:
+          Value: true
+        right_hand_ring_middle_link:
+          Value: true
+        right_hand_ring_proximal_link:
+          Value: true
+        right_hand_softhand_base:
+          Value: true
+        right_hand_thumb_distal_link:
+          Value: true
+        right_hand_thumb_fake_link1:
+          Value: true
+        right_hand_thumb_fake_link3:
+          Value: true
+        right_hand_thumb_knuckle_link:
+          Value: true
+        right_hand_thumb_proximal_link:
+          Value: true
         table_leg_0_link:
           Value: true
         table_leg_1_link:
@@ -547,133 +1059,220 @@ Visualization Manager:
             camera_depth_optical_frame:
               {}
           camera_rgb_frame:
-            camera_rgb_optical_frame:
-              world:
-                Box_0:
-                  {}
-                vito_anchor:
-                  left_arm_base_link:
-                    left_arm_1_link:
-                      left_arm_2_link:
-                        left_arm_3_link:
-                          left_arm_4_link:
-                            left_arm_5_link:
-                              left_arm_6_link:
-                                left_arm_7_link:
-                                  {}
-                                left_arm_7_link_dummy:
-                                  {}
-                                left_arm_7_link_dummy_add_torque:
-                                  {}
-                                left_arm_7_link_dummy_damping:
-                                  {}
-                              left_arm_6_link_dummy:
-                                {}
-                              left_arm_6_link_dummy_add_torque:
-                                {}
-                              left_arm_6_link_dummy_damping:
-                                {}
-                            left_arm_5_link_dummy:
+            {}
+        camera_rgb_optical_frame:
+          world:
+            vito_anchor:
+              left_arm_base_link:
+                left_arm_1_link:
+                  left_arm_2_link:
+                    left_arm_3_link:
+                      left_arm_4_link:
+                        left_arm_5_link:
+                          left_arm_6_link:
+                            left_arm_7_link:
+                              left_hand_kuka_coupler_bottom:
+                                left_hand_kuka_coupler:
+                                  left_hand_clamp:
+                                    left_hand_softhand_base:
+                                      left_hand_palm_link:
+                                        left_hand_index_knuckle_link:
+                                          left_hand_index_fake_link1:
+                                            left_hand_index_proximal_link:
+                                              left_hand_index_fake_link2:
+                                                left_hand_index_middle_link:
+                                                  left_hand_index_fake_link3:
+                                                    left_hand_index_distal_link:
+                                                      {}
+                                        left_hand_invisible_wire_link:
+                                          {}
+                                        left_hand_little_knuckle_link:
+                                          left_hand_little_fake_link1:
+                                            left_hand_little_proximal_link:
+                                              left_hand_little_fake_link2:
+                                                left_hand_little_middle_link:
+                                                  left_hand_little_fake_link3:
+                                                    left_hand_little_distal_link:
+                                                      {}
+                                        left_hand_middle_knuckle_link:
+                                          left_hand_middle_fake_link1:
+                                            left_hand_middle_proximal_link:
+                                              left_hand_middle_fake_link2:
+                                                left_hand_middle_middle_link:
+                                                  left_hand_middle_fake_link3:
+                                                    left_hand_middle_distal_link:
+                                                      {}
+                                        left_hand_ring_knuckle_link:
+                                          left_hand_ring_fake_link1:
+                                            left_hand_ring_proximal_link:
+                                              left_hand_ring_fake_link2:
+                                                left_hand_ring_middle_link:
+                                                  left_hand_ring_fake_link3:
+                                                    left_hand_ring_distal_link:
+                                                      {}
+                                        left_hand_thumb_knuckle_link:
+                                          left_hand_thumb_fake_link1:
+                                            left_hand_thumb_proximal_link:
+                                              left_hand_thumb_fake_link3:
+                                                left_hand_thumb_distal_link:
+                                                  {}
+                            left_arm_7_link_dummy:
                               {}
-                            left_arm_5_link_dummy_add_torque:
+                            left_arm_7_link_dummy_add_torque:
                               {}
-                            left_arm_5_link_dummy_damping:
+                            left_arm_7_link_dummy_damping:
                               {}
-                          left_arm_4_link_dummy:
+                          left_arm_6_link_dummy:
                             {}
-                          left_arm_4_link_dummy_add_torque:
+                          left_arm_6_link_dummy_add_torque:
                             {}
-                          left_arm_4_link_dummy_damping:
+                          left_arm_6_link_dummy_damping:
                             {}
-                        left_arm_3_link_dummy:
+                        left_arm_5_link_dummy:
                           {}
-                        left_arm_3_link_dummy_add_torque:
+                        left_arm_5_link_dummy_add_torque:
                           {}
-                        left_arm_3_link_dummy_damping:
+                        left_arm_5_link_dummy_damping:
                           {}
-                      left_arm_2_link_dummy:
+                      left_arm_4_link_dummy:
                         {}
-                      left_arm_2_link_dummy_add_torque:
+                      left_arm_4_link_dummy_add_torque:
                         {}
-                      left_arm_2_link_dummy_damping:
+                      left_arm_4_link_dummy_damping:
                         {}
-                    left_arm_1_link_dummy:
+                    left_arm_3_link_dummy:
                       {}
-                    left_arm_1_link_dummy_add_torque:
+                    left_arm_3_link_dummy_add_torque:
                       {}
-                    left_arm_1_link_dummy_damping:
+                    left_arm_3_link_dummy_damping:
                       {}
-                  right_arm_base_link:
-                    right_arm_1_link:
-                      right_arm_2_link:
-                        right_arm_3_link:
-                          right_arm_4_link:
-                            right_arm_5_link:
-                              right_arm_6_link:
-                                right_arm_7_link:
-                                  {}
-                                right_arm_7_link_dummy:
-                                  {}
-                                right_arm_7_link_dummy_add_torque:
-                                  {}
-                                right_arm_7_link_dummy_damping:
-                                  {}
-                              right_arm_6_link_dummy:
-                                {}
-                              right_arm_6_link_dummy_add_torque:
-                                {}
-                              right_arm_6_link_dummy_damping:
-                                {}
-                            right_arm_5_link_dummy:
-                              {}
-                            right_arm_5_link_dummy_add_torque:
-                              {}
-                            right_arm_5_link_dummy_damping:
-                              {}
-                          right_arm_4_link_dummy:
-                            {}
-                          right_arm_4_link_dummy_add_torque:
-                            {}
-                          right_arm_4_link_dummy_damping:
-                            {}
-                        right_arm_3_link_dummy:
-                          {}
-                        right_arm_3_link_dummy_add_torque:
-                          {}
-                        right_arm_3_link_dummy_damping:
-                          {}
-                      right_arm_2_link_dummy:
-                        {}
-                      right_arm_2_link_dummy_add_torque:
-                        {}
-                      right_arm_2_link_dummy_damping:
-                        {}
-                    right_arm_1_link_dummy:
-                      {}
-                    right_arm_1_link_dummy_add_torque:
-                      {}
-                    right_arm_1_link_dummy_damping:
-                      {}
-                  table_plate_link:
-                    table_leg_0_link:
-                      {}
-                    table_leg_1_link:
-                      {}
-                    table_leg_2_link:
-                      {}
-                    table_leg_3_link:
-                      {}
-                  torso_link:
+                  left_arm_2_link_dummy:
                     {}
-                  workbench_plate_link:
-                    workbench_leg_0_link:
+                  left_arm_2_link_dummy_add_torque:
+                    {}
+                  left_arm_2_link_dummy_damping:
+                    {}
+                left_arm_1_link_dummy:
+                  {}
+                left_arm_1_link_dummy_add_torque:
+                  {}
+                left_arm_1_link_dummy_damping:
+                  {}
+              right_arm_base_link:
+                right_arm_1_link:
+                  right_arm_2_link:
+                    right_arm_3_link:
+                      right_arm_4_link:
+                        right_arm_5_link:
+                          right_arm_6_link:
+                            right_arm_7_link:
+                              right_hand_kuka_coupler_bottom:
+                                right_hand_kuka_coupler:
+                                  right_hand_clamp:
+                                    right_hand_softhand_base:
+                                      right_hand_palm_link:
+                                        right_hand_index_knuckle_link:
+                                          right_hand_index_fake_link1:
+                                            right_hand_index_proximal_link:
+                                              right_hand_index_fake_link2:
+                                                right_hand_index_middle_link:
+                                                  right_hand_index_fake_link3:
+                                                    right_hand_index_distal_link:
+                                                      {}
+                                        right_hand_invisible_wire_link:
+                                          {}
+                                        right_hand_little_knuckle_link:
+                                          right_hand_little_fake_link1:
+                                            right_hand_little_proximal_link:
+                                              right_hand_little_fake_link2:
+                                                right_hand_little_middle_link:
+                                                  right_hand_little_fake_link3:
+                                                    right_hand_little_distal_link:
+                                                      {}
+                                        right_hand_middle_knuckle_link:
+                                          right_hand_middle_fake_link1:
+                                            right_hand_middle_proximal_link:
+                                              right_hand_middle_fake_link2:
+                                                right_hand_middle_middle_link:
+                                                  right_hand_middle_fake_link3:
+                                                    right_hand_middle_distal_link:
+                                                      {}
+                                        right_hand_ring_knuckle_link:
+                                          right_hand_ring_fake_link1:
+                                            right_hand_ring_proximal_link:
+                                              right_hand_ring_fake_link2:
+                                                right_hand_ring_middle_link:
+                                                  right_hand_ring_fake_link3:
+                                                    right_hand_ring_distal_link:
+                                                      {}
+                                        right_hand_thumb_knuckle_link:
+                                          right_hand_thumb_fake_link1:
+                                            right_hand_thumb_proximal_link:
+                                              right_hand_thumb_fake_link3:
+                                                right_hand_thumb_distal_link:
+                                                  {}
+                            right_arm_7_link_dummy:
+                              {}
+                            right_arm_7_link_dummy_add_torque:
+                              {}
+                            right_arm_7_link_dummy_damping:
+                              {}
+                          right_arm_6_link_dummy:
+                            {}
+                          right_arm_6_link_dummy_add_torque:
+                            {}
+                          right_arm_6_link_dummy_damping:
+                            {}
+                        right_arm_5_link_dummy:
+                          {}
+                        right_arm_5_link_dummy_add_torque:
+                          {}
+                        right_arm_5_link_dummy_damping:
+                          {}
+                      right_arm_4_link_dummy:
+                        {}
+                      right_arm_4_link_dummy_add_torque:
+                        {}
+                      right_arm_4_link_dummy_damping:
+                        {}
+                    right_arm_3_link_dummy:
                       {}
-                    workbench_leg_1_link:
+                    right_arm_3_link_dummy_add_torque:
                       {}
-                    workbench_leg_2_link:
+                    right_arm_3_link_dummy_damping:
                       {}
-                    workbench_leg_3_link:
-                      {}
+                  right_arm_2_link_dummy:
+                    {}
+                  right_arm_2_link_dummy_add_torque:
+                    {}
+                  right_arm_2_link_dummy_damping:
+                    {}
+                right_arm_1_link_dummy:
+                  {}
+                right_arm_1_link_dummy_add_torque:
+                  {}
+                right_arm_1_link_dummy_damping:
+                  {}
+              table_plate_link:
+                table_leg_0_link:
+                  {}
+                table_leg_1_link:
+                  {}
+                table_leg_2_link:
+                  {}
+                table_leg_3_link:
+                  {}
+              torso_link:
+                {}
+              workbench_plate_link:
+                workbench_leg_0_link:
+                  {}
+                workbench_leg_1_link:
+                  {}
+                workbench_leg_2_link:
+                  {}
+                workbench_leg_3_link:
+                  {}
       Update Interval: 0
       Value: true
     - Class: rviz/MarkerArray
@@ -746,7 +1345,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 1.37253
+      Distance: 2.03797
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.06
         Stereo Focal Distance: 1
@@ -758,10 +1357,10 @@ Visualization Manager:
         Z: 0.286173
       Name: Current View
       Near Clip Distance: 0.01
-      Pitch: 0.339796
+      Pitch: 0.534796
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 2.05279
+      Yaw: 1.6078
     Saved: ~
 Window Geometry:
   Displays:
@@ -779,5 +1378,5 @@ Window Geometry:
   Views:
     collapsed: false
   Width: 1717
-  X: 1934
-  Y: 57
+  X: 1911
+  Y: 33

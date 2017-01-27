@@ -51,14 +51,17 @@
 #include <geometry_msgs/PoseArray.h>
 #include <sensor_msgs/PointCloud2.h>
 #include <ros/rate.h>
-#include <mvbb/Slice.h>
-#include <mvbb/calibrate.h>
+// #include <mvbb/Slice.h>
+// #include <mvbb/calibrate.h>
 #include <std_msgs/Float64MultiArray.h>
+#include <std_msgs/Float64.h>
 #include <rviz_visual_tools/rviz_visual_tools.h>
 #include <iostream>
 #include <string>
 #include <vector>
 #include <utility>
+#include <pcl_ros/transforms.h>
+#include <tf_conversions/tf_eigen.h>
 
 // typedef std::pair<Eigen::Affine3d, std::vector<double>> single_box_info;
 
@@ -83,6 +86,8 @@ namespace mvbb
         void cbCloud(const sensor_msgs::PointCloud2::ConstPtr &msg);
         void subCallback(const std_msgs::Float64::ConstPtr &msg);
         bool cbSlice();
+        void show_results();
+        void load_calibration();
         boost::shared_ptr<ros::NodeHandle> nh_;
         ros::Subscriber sub_;
         ros::ServiceServer srv_slice_;
@@ -91,6 +96,7 @@ namespace mvbb
         ros::ServiceServer srv_calib_;
         tf::TransformBroadcaster brcaster_;
         tf::TransformListener listener_;
+        tf::StampedTransform T_c_w_;
         std::string topic_, frame_;
         pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud_;
         std::vector<tf::Transform> transf_;
@@ -98,11 +104,13 @@ namespace mvbb
         tf::Transform delta_trans_;
         std::vector<std::string> names_;
         std::vector<std::pair<Eigen::Affine3d, std::vector<double>>> info_boxes;
+        Eigen::Matrix4f transform;
         //params
         double clus_tol_;
         int min_size_, max_size_;
-        bool invert_;
+        bool invert_, broadcast_results_;
         rviz_visual_tools::RvizVisualToolsPtr visual_tools_;
+        Eigen::Affine3d transform_c_w;
     };
 }
 #endif //_INCL_MVBB_H_

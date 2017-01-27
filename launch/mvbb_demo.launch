@@ -11,16 +11,6 @@
         <arg name="depth_camera_info_url" value="file://$(find calibration)/config/intrinsics/depth_$(arg asus).yaml"/>
     </include>
 
-    <rosparam command="load" file="$(find mvbb)/config/calibration.yaml" ns="/mvbb"/>
-    <node pkg="mvbb" type="mvbb_node" name="mvbb" output="screen">
-        <param name="cluster_tolerance" value="0.02"/>
-        <param name="cluster_min_size" value="100"/>
-        <param name="cluster_max_size" value="70000"/>
-        <param name="input_topic" value="/pacman_vision/processed_scene"/>
-        <param name="reference_frame" value="/world"/>
-        <param name="invert_z_projection" value="true"/>
-    </node>
-
     <include file="$(find calibration)/launch/asus_head_vito_broadcaster.launch"/>
 
     <include file="$(find pacman_vision)/launch/pacman_vision.launch">
